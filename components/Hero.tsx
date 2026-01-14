@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Instagram, Linkedin } from "lucide-react";
 import AnimatedGridBackground from "./AnimatedGridBackground";
 
 export default function Hero() {
@@ -54,7 +54,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col items-center gap-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
@@ -78,14 +78,36 @@ export default function Hero() {
               />
             </MagneticButton>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 glass rounded-full font-semibold flex items-center gap-2 hover:glow transition-all"
+            {/* Social Media Icons */}
+            <motion.div
+              className="flex gap-6 items-center"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
             >
-              <Download className="w-5 h-5" />
-              Download Profile
-            </motion.button>
+              <motion.a
+                href="https://www.instagram.com/danishmsb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/70 hover:text-accent transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Instagram"
+              >
+                <Instagram className="w-6 h-6" />
+              </motion.a>
+              <motion.a
+                href="https://www.linkedin.com/in/danish-samsudin/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/70 hover:text-accent transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-6 h-6" />
+              </motion.a>
+            </motion.div>
           </motion.div>
 
           {/* Scroll indicator */}

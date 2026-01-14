@@ -14,6 +14,7 @@ const experiences = [
     metric: "Pre-Revenue Phase",
     impact:
       "Designed and launched a housing-matching platform addressing inefficiencies in student and international housing markets, combining platform logic, user experience design, and market validation.",
+    url: "https://domumatch.com",
   },
   {
     icon: Globe,
@@ -22,6 +23,7 @@ const experiences = [
     years: "2022 - Present",
     metric: "5 Companies Incorporated",
     impact: "Acts as a market access layer between global manufacturers and European consumers, handling market entry, operational setup, and ongoing platform execution.",
+    url: "https://tradelinkinternational.nl",
   },
   {
     icon: BarChart,
@@ -94,7 +96,15 @@ export default function BusinessSection() {
           const Icon = exp.icon;
           return (
             <motion.div key={index} variants={itemVariants}>
-              <BentoCard glow={index === 0} className="h-full">
+              <BentoCard
+                glow={true}
+                className={`h-full ${exp.url ? "cursor-pointer" : ""}`}
+                onClick={() => {
+                  if (exp.url) {
+                    window.open(exp.url, "_blank", "noopener,noreferrer");
+                  }
+                }}
+              >
                 <div className="flex items-start gap-4 mb-4">
                   <div className="p-3 rounded-xl bg-accent/10 text-accent">
                     <Icon className="w-6 h-6" />

@@ -5,12 +5,14 @@ interface BentoCardProps {
   children: ReactNode;
   className?: string;
   glow?: boolean;
+  onClick?: () => void;
 }
 
 export default function BentoCard({
   children,
   className = "",
   glow = false,
+  onClick,
 }: BentoCardProps) {
   return (
     <motion.div
@@ -19,6 +21,7 @@ export default function BentoCard({
       } ${className}`}
       whileHover={{ scale: 1.02, y: -4 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      onClick={onClick}
     >
       {children}
     </motion.div>

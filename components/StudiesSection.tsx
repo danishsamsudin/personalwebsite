@@ -127,7 +127,7 @@ export default function StudiesSection() {
             >
               <BentoCard
                 className="h-full relative overflow-hidden group"
-                glow={index % 3 === 0}
+                glow={false}
               >
                 {/* Gradient background on hover */}
                 <div

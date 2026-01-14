@@ -138,7 +138,7 @@ export default function AchievementsSection() {
           const Icon = stat.icon;
           return (
             <motion.div key={index} variants={itemVariants}>
-              <BentoCard className="text-center">
+              <BentoCard glow={true} className="text-center">
                 <div className="flex justify-center mb-4">
                   <div className="p-3 rounded-xl bg-accent/10 text-accent">
                     <Icon className="w-6 h-6" />
@@ -162,7 +162,7 @@ export default function AchievementsSection() {
       >
         {achievements.map((achievement, index) => (
           <motion.div key={index} variants={itemVariants}>
-            <BentoCard glow={index % 2 === 0} className="h-full">
+            <BentoCard glow={false} className="h-full">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold mb-2">{achievement.title}</h3>

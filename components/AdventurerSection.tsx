@@ -164,6 +164,9 @@ export default function AdventurerSection() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="px-8 py-4 bg-accent text-background font-semibold rounded-full glow-accent"
+          onClick={() => {
+            window.location.href = "mailto:info@tradelinkinternational.nl";
+          }}
         >
           Get In Touch
         </motion.button>
