@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-20"
     >
       <AnimatedGridBackground />
       
@@ -19,7 +19,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <motion.h1
-            className="text-5xl sm:text-6xl lg:text-8xl font-bold mb-6 leading-tight"
+            className="text-4xl sm:text-6xl lg:text-8xl font-bold mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
@@ -42,6 +42,15 @@ export default function Hero() {
             <br />
             Where strategic impact meets peak performance.
           </motion.p>
+
+          <motion.div
+            className="text-3xl sm:text-4xl lg:text-5xl font-dancing-script text-foreground/90 mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+          >
+            Danish Samsudin
+          </motion.div>
 
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
@@ -77,28 +86,31 @@ export default function Hero() {
               Download Profile
             </motion.button>
           </motion.div>
+
+          {/* Scroll indicator */}
+          <motion.div
+            className="flex justify-center mt-16 mb-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
+          >
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-6 h-10 border-2 border-foreground/30 rounded-full flex justify-center"
+            >
+              <motion.div
+                animate={{ y: [0, 12, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="w-1 h-3 bg-accent rounded-full mt-2"
+              />
+            </motion.div>
+          </motion.div>
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.8 }}
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-foreground/30 rounded-full flex justify-center"
-        >
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-3 bg-accent rounded-full mt-2"
-          />
-        </motion.div>
-      </motion.div>
+      {/* Fade-out gradient overlay at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none z-10" />
     </section>
   );
 }
