@@ -16,6 +16,9 @@ const config: Config = {
         muted: "var(--muted)",
         border: "var(--border)",
       },
+      fontFamily: {
+        "dancing-script": ["var(--font-dancing-script)", "cursive"],
+      },
     },
   },
   plugins: [],

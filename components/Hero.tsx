@@ -44,7 +44,8 @@ export default function Hero() {
           </motion.p>
 
           <motion.div
-            className="text-3xl sm:text-4xl lg:text-5xl font-dancing-script text-foreground/90 mb-12"
+            className="text-3xl sm:text-4xl lg:text-5xl text-foreground/90 mb-12"
+            style={{ fontFamily: 'var(--font-dancing-script), cursive' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}

@@ -56,9 +56,9 @@ export default function FloatingNav() {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
-          className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50"
+          className="fixed bottom-4 sm:bottom-6 left-0 right-0 z-50 flex justify-center items-center"
         >
-          <div className="glass rounded-full px-4 py-3 flex items-center gap-2 shadow-lg">
+          <div className="glass rounded-full px-1.5 sm:px-2 py-2.5 sm:py-3 flex items-center gap-1.5 sm:gap-2 shadow-lg">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeSection === item.id;
@@ -74,7 +74,7 @@ export default function FloatingNav() {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Icon size={20} />
+                  <Icon className="w-[18px] h-[18px] sm:w-5 sm:h-5" />
                   {isActive && (
                     <motion.div
                       className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 rounded-full bg-accent"

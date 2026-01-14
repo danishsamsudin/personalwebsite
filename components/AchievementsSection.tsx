@@ -52,7 +52,10 @@ function AnimatedCounter({ value, duration = 2 }: { value: string; duration?: nu
   const suffix = value.replace(/\d/g, "").replace(prefix, "");
 
   return (
-    <span ref={ref} className="text-5xl font-bold gradient-text">
+    <span
+      ref={ref}
+      className="text-4xl sm:text-5xl font-bold gradient-text leading-tight"
+    >
       {isInView ? (
         <CountUpAnimation target={numValue} duration={duration} prefix={prefix} suffix={suffix} />
       ) : (
@@ -125,7 +128,7 @@ export default function AchievementsSection() {
     >
       {/* Stats Row */}
       <motion.div
-        className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16 sm:mb-20"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
